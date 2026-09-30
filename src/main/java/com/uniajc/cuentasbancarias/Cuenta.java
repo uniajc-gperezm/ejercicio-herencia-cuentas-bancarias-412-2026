@@ -1,4 +1,4 @@
-package com.uniajc;
+package com.uniajc.cuentasbancarias;
 
 public class Cuenta {
     protected float saldo;
@@ -52,12 +52,40 @@ public class Cuenta {
         this.comisionMensual = comisionMensual;
     }
 
-    public void consignar(float cantidad) { }
 
-    public void retirar(float cantidad) { }
+    public void consignar(float cantidad) { 
+        if (cantidad > 0) {
+            saldo += cantidad;
+            numeroConsignaciones++;
+        }
+    }
 
-    public void calcularInteres() { }
+    public void retirar(float cantidad) { 
+        if (cantidad <= saldo && cantidad > 0) {
+            saldo -= cantidad;
+            numeroRetiros++;
+        }}
 
-    public void extractoMensual() { }
+    public void calcularInteres() 
+    { float interesMensual = (tasaAnual / 12) / 100 * saldo;
+        saldo += interesMensual;
+    }
 
-}
+    public void extractoMensual() { 
+        saldo -= comisionMensual;
+        calcularInteres();
+    }
+
+    public void imprimir() {
+        System.out.println("Saldo: $" + saldo);
+        System.out.println("Número de consignaciones: " + numeroConsignaciones);
+        System.out.println("Número de retiros: " + numeroRetiros);
+        System.out.println("Tasa anual: " + tasaAnual + "%");
+        System.out.println("Comisión mensual: $" + comisionMensual);
+        System.out.println("Número de transacciones: " + (numeroConsignaciones + numeroRetiros));
+    }
+    }
+
+    
+
+

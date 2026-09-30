@@ -1,4 +1,4 @@
-package com.uniajc;
+package com.uniajc.cuentasbancarias;
 
 import java.util.Scanner;
 
