@@ -1,4 +1,4 @@
-package com.uniajc;
+package com.uniajc.cuentasbancarias;
 
 public class CuentaAhorros extends Cuenta {
     protected boolean activa;
