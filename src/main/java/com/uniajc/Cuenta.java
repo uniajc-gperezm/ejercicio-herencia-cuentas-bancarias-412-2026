@@ -52,12 +52,31 @@ public class Cuenta {
         this.comisionMensual = comisionMensual;
     }
 
-    public void consignar(float cantidad) { }
+    public void consignar(float cantidad) { 
+        if (cantidad > 0) {
+            saldo += cantidad;
+            numeroConsignaciones++;
+        } else {
+            System.out.println("La cantidad a consignar debe ser mayor que cero.");
+        }
+    }
 
-    public void retirar(float cantidad) { }
+    public void retirar(float cantidad) {
+        if (cantidad > 0 && cantidad <= saldo) {
+            saldo -= cantidad;
+            numeroRetiros++;
+        } else {
+            System.out.println("La cantidad a retirar debe ser mayor que cero y no puede exceder el saldo disponible.");
+        }
+    }
 
-    public void calcularInteres() { }
+    public void calcularInteres() {
+        float interesMensual = saldo * ((tasaAnual / 12) / 100);
+        saldo += interesMensual;
+    }
 
-    public void extractoMensual() { }
-
+    public void extractoMensual() { 
+        saldo -= comisionMensual;
+        calcularInteres();
+    }
 }
