@@ -11,7 +11,9 @@ public class CuentaAhorros extends Cuenta {
     public void retirar(float cantidad) { }
 
     @Override
-    public void consignar(float cantidad) { }
+    public void consignar(float cantidad) {
+        super.consignar(cantidad);
+    }
 
     @Override
     public void extractoMensual() { }
