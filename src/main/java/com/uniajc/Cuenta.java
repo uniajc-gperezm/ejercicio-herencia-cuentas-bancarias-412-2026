@@ -77,7 +77,7 @@ public class Cuenta {
 
         numeroRetiros++;
         // numeroRetiros = numeroRetiros + 1;
-        System.out.println("Se ha retirado: " + cantidad);
+        // System.out.println("Se ha retirado: " + cantidad);
     }
 
     public void calcularInteres() { 

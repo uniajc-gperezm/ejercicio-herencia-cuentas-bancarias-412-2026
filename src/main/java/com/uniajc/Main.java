@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world desde la rama Cuentas!");
 
+/*      
         CuentaAhorros cuentaAhorros = new CuentaAhorros(15000.0f, 0.05f);
 
         cuentaAhorros.imprimir(); // Saldo: 15000.0f, Activa: true
@@ -30,6 +31,21 @@ public class Main {
         cuentaAhorros.retirar(500.0f);
         cuentaAhorros.extractoMensual(); // Comision mensual: 1000f, Saldo: 19500.0f
         cuentaAhorros.imprimir(); // Saldo: 20000.0f, Activa: true
-    
+    */
+
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(10000.0f, 0.05f);
+
+        
+        cuentaCorriente.imprimir(); // Saldo: 10000.0f, Sobregiro: 0.0f
+
+        cuentaCorriente.retirar(15000.0f); // Saldo: 0.0f, Sobregiro: 5000.0f
+
+        cuentaCorriente.imprimir(); // Saldo: 0.0f, Sobregiro: 5000.0f
+
+
+        cuentaCorriente.retirar(10000); // Saldo: 0.0f, Sobregiro: 15000.0f
+        cuentaCorriente.imprimir();
+
+
     }
 }
